@@ -1,10 +1,14 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Hmoe from '/components/Home'
-import Index from '/components/Index'
-import Product from '/components/Product'
-import Detail from '/components/Detail'
-import Cart from '/components/Cart'
+import Hmoe from '@/Page/Home'
+import Index from '@/Page/Index'
+import Product from '@/Page/Product'
+import Detail from '@/Page/Detail'
+import Cart from '@/Page/Cart'
+import Order from '@/Page/Order'
+import orderConfirm from '@/Page/orderConfirm'
+import orderList from '@/Page/orderList'
+import orderPay from '@/Page/orderPay'
 
 
 Vue.use(Router)
@@ -12,31 +16,54 @@ Vue.use(Router)
 
 
 export default new Router({
-    routes:[
-        {
-            path:'/',
-            name:'home',
-            component:Hmoe,
-            children:[{
-                path:'/index',
-                name:'index',
-                component:Index
-            },
-            {
-                path:'/product/:id',
-                name:'product',
-                component:Product
-            },
-            {
-                path:'/detail/:id',
-                name:'detail',
-                component:Detail
-            }]
+    routes: [{
+            path: '/',
+            name: 'home',
+            component: Hmoe,
+            redirect:'/index',
+            children: [{
+                    path: '/index',
+                    name: 'index',
+                    component: Index
+                },
+                {
+                    path: '/product/:id',
+                    name: 'product',
+                    component: Product
+                },
+                {
+                    path: '/detail/:id',
+                    name: 'detail',
+                    component: Detail
+                }
+            ]
         },
         {
-            path:'/cart',
-            name:'cart',
-            component:Cart
+            path: '/cart',
+            name: 'cart',
+            component: Cart
+        },
+        {
+            path: '/order',
+            name: 'order',
+            component: Order,
+            children: [{
+                    path: 'list',
+                    name: 'order-list',
+                    component: orderList
+                },
+                {
+                    path: 'confirm',
+                    name: 'order-confirm',
+                    component: orderConfirm
+                },
+                {
+                    path: 'pay',
+                    name: 'order-pay',
+                    component: orderPay
+                }
+            ]
+
         }
     ]
 });

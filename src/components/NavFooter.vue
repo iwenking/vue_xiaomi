@@ -1,12 +1,12 @@
 <template>
-  <div>
-      1111
-  </div>
+    <div>
+        nav-footer
+    </div>
 </template>
 
 <script>
 export default {
-
+    name:'nav-footer'
 }
 </script>
 
