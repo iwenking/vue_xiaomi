@@ -5,9 +5,17 @@
 </template>
 
 <script>
-
+import storage from './storage'
 export default {
   name: 'App',
+  data(){
+    return {
+      
+    }
+  },
+  mounted(){
+    
+  }
 }
 </script>
 
