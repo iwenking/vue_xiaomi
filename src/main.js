@@ -5,6 +5,11 @@ import VueAxios from 'vue-axios'
 import App from './App.vue'
 import env from './env'
 
+const mock = true;
+if(mock){
+  require("./mock/api")
+}
+
 //根据前端的跨域方式调整
 axios.defaults.baseURL = '/api';
 //根据环境变量获取不同的请求地址
