@@ -14,22 +14,11 @@ export default {
     }
   },
   mounted(){
-    this.axios.get('/user/login').then((res)=>{
-      // this.res = res
-      console.log(res);
-      
-    })
+    
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+@import './assets/scss/reset.scss'
 </style>
