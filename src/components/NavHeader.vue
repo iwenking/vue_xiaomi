@@ -188,6 +188,7 @@ export default {
             z-index: 10;
             overflow: hidden;
             transition: height 0.5s;
+            background-color: #fff;
             .product {
               position: relative;
               float: left;
