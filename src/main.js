@@ -3,7 +3,7 @@ import router from './router'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 import App from './App.vue'
-import env from './env'
+// import env from './env'
 
 const mock = true;
 if(mock){

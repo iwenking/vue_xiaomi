@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import storage from './storage'
+// import storage from './storage'
 export default {
   name: 'App',
   data(){
