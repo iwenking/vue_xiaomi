@@ -3,7 +3,11 @@ import router from './router'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 import App from './App.vue'
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
 // import env from './env'
+
+Vue.use(ElementUI);
 
 const mock = true;
 if(mock){
