@@ -65,10 +65,8 @@ export default {
           password
         })
         .then(res => {
-            console.log(res);
-            
-        //   this.$cookie.set("userId", res.id, { expires: "M" });
-        //   this.$router.push("/index");
+          this.$cookie.set("userId", res.id, { expires: "M" });
+          this.$router.push("/index");
         })
         .catch(err => {
           console.log(err);

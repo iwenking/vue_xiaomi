@@ -11,10 +11,10 @@ import 'element-ui/lib/theme-chalk/index.css';
 
 Vue.use(ElementUI);
 
-const mock = true;
-if(mock){
-  require("./mock/api")
-}
+// const mock = true;
+// if(mock){
+//   require("./mock/api")
+// }
 
 //根据前端的跨域方式调整
 axios.defaults.baseURL = '/api';
