@@ -41,7 +41,7 @@
           </ul>
         </div>
         <el-carousel indicator-position="outside" height="451px">
-          <el-carousel-item v-for="(item,index) in slideList" :key="index">
+          <el-carousel-item v-for="(item,index) in slideList" :key="index" arrow="always">
             <a v-bind:href="'/#/product/'+item.id">
               <img v-bind:src="item.img" />
             </a>
@@ -195,7 +195,6 @@ export default {
         .then(res => {
           res.list = res.list.slice(6, 14);
           this.phoneList = [res.list.slice(0, 4), res.list.slice(4, 8)];
-          console.log(res);
         });
     },
     addCart(id){
