@@ -49,6 +49,7 @@ export default {
   border-top: 1px solid #e5e5e5;
   width: 100%;
   background-color: #fff;
+  z-index: 10;
   &.is_fixed {
     position: fixed;
     top: 0;

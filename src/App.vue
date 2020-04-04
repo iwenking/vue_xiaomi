@@ -14,8 +14,8 @@ export default {
     };
   },
   mounted() {
-    // this.getUser();
-    // this.getCartCount()
+    this.getUser();
+    this.getCartCount()
   },
   methods: {
     getUser() {
