@@ -103,7 +103,7 @@ export default {
         selected:true
       }).then((res)=>{
           this.$store.dispatch("saveCartCount", res.cartTotalQuantity);
-          // this.$router.push('/cart');     
+          this.$router.push('/cart'); 
       })
     }
   }

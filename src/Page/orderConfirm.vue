@@ -1,12 +1,15 @@
-    <template>
-  <div>Order-confirm</div>
+<template>
+  <div>
+    order-confirm
+  </div>
 </template>
-    
-    <script>
+
+<script>
 export default {
-  name: "order-confirm"
-};
+  name:'order-confirm'
+}
 </script>
-    
-    <style>
+
+<style>
+
 </style>
