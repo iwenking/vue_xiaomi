@@ -9,6 +9,7 @@ import Order from '@/Page/Order'
 import orderConfirm from '@/Page/orderConfirm'
 import orderList from '@/Page/orderList'
 import orderPay from '@/Page/orderPay'
+import Alipay from '@/Page/alipay'
 import Login from '@/Page/login'
 
 
@@ -67,6 +68,11 @@ export default new Router({
                     path: 'pay',
                     name: 'order-pay',
                     component: orderPay
+                },
+                {
+                    path: 'alipay',
+                    name: 'alipay',
+                    component: Alipay
                 }
             ]
 

@@ -5,12 +5,10 @@ import VueAxios from 'vue-axios'
 import VueLazyLoad from "vue-lazyload";
 import VueCookie from 'vue-cookie';
 import App from './App.vue'
-import ElementUI from 'element-ui';
+import {Carousel,CarouselItem,Message} from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 import store from './store'
 // import env from './env'
-
-Vue.use(ElementUI);
 
 // const mock = true;
 // if(mock){
@@ -36,10 +34,16 @@ axios.interceptors.response.use(function (response) {
     }
     return Promise.reject();
   } else {
-    alert(res.msg);
+  
+    this.$message.warning(res.msg);
     return Promise.reject();
   }
 })
+
+
+Vue.use(Carousel);
+Vue.use(CarouselItem);
+Vue.prototype.$message = Message;
 
 Vue.use(VueCookie);
 Vue.use(VueAxios, axios);
