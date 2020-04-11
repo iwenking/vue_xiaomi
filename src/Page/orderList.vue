@@ -1,6 +1,6 @@
 <template>
   <div>
-      list
+      order-list
   </div>
 </template>
 
