@@ -5,7 +5,6 @@
     align-items: $col;
 }
 
-//
 @mixin baImg($w:0, $h:0, $img:"", $size:contain) {
     display: inline-block;
     width: $w;
@@ -31,3 +30,14 @@
     background: url($img) no-repeat center;
     background-size: center;
 }
+@mixin height($h:0,$lh:$h) {
+    height: $h;
+    line-height: $lh;
+  }
+  @mixin wH($w:0,$h:0) {
+    width:$w;
+    height: $h;
+  }
+@mixin border($bw:1px,$bc:$colorF,$bs:solid) {
+    border: $bw $bs $bc; 
+  }
