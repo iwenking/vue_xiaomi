@@ -2,80 +2,69 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Hmoe from '@/Page/Home'
 import Index from '@/Page/Index'
-import Product from '@/Page/Product'
-import Detail from '@/Page/Detail'
-import Cart from '@/Page/Cart'
-import Order from '@/Page/Order'
-import orderConfirm from '@/Page/orderConfirm'
-import orderList from '@/Page/orderList'
-import orderPay from '@/Page/orderPay'
-import Alipay from '@/Page/alipay'
-import Login from '@/Page/login'
-
-
 Vue.use(Router)
 
 
 
 export default new Router({
     routes: [{
-            path: '/',
-            name: 'home',
-            component: Hmoe,
-            redirect:'/index',
-            children: [{
-                    path: '/index',
-                    name: 'index',
-                    component: Index
-                },
-                {
-                    path: '/product/:id',
-                    name: 'product',
-                    component: Product
-                },
-                {
-                    path: '/detail/:id',
-                    name: 'detail',
-                    component: Detail
-                }
-            ]
+        path: '/',
+        name: 'home',
+        component: Hmoe,
+        redirect: '/index',
+        children: [{
+            path: '/index',
+            name: 'index',
+            component: Index
         },
         {
-            path: '/login',
-            name: 'login',
-            component: Login
+            path: '/product/:id',
+            name: 'product',
+            component: resolve => require(['@/Page/Product.vue'], resolve)
         },
         {
-            path: '/cart',
-            name: 'cart',
-            component: Cart
-        },
-        {
-            path: '/order',
-            name: 'order',
-            component: Order,
-            children: [{
-                    path: 'list',
-                    name: 'order-list',
-                    component: orderList
-                },
-                {
-                    path: 'confirm',
-                    name: 'order-confirm',
-                    component: orderConfirm
-                },
-                {
-                    path: 'pay',
-                    name: 'order-pay',
-                    component: orderPay
-                },
-                {
-                    path: 'alipay',
-                    name: 'alipay',
-                    component: Alipay
-                }
-            ]
-
+            path: '/detail/:id',
+            name: 'detail',
+            component: resolve => require(['@/Page/Detail.vue'], resolve)
         }
+        ]
+    },
+    {
+        path: '/login',
+        name: 'login',
+        component: () => import('@/Page/login.vue')
+    },
+    {
+        path: '/cart',
+        name: 'cart',
+        component: import('@/Page/Cart.vue')
+    },
+    {
+        path: '/order',
+        name: 'order',
+        component: import('@/Page/Order.vue'),
+        children: [{
+            path: 'list',
+            name: 'order-list',
+            component: import('@/Page/orderList.vue')
+        },
+        {
+            path: 'confirm',
+            name: 'order-confirm',
+            component: import('@/Page/orderConfirm.vue')
+        },
+        {
+            path: 'pay',
+            name: 'order-pay',
+            component: import('@/Page/orderPay.vue')
+        },
+        {
+            path: 'alipay',
+            name: 'alipay',
+            component: import('@/Page/alipay.vue')
+        }
+        ]
+
+    }
     ]
 });
