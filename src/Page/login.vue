@@ -82,15 +82,7 @@ export default {
     },
     ...mapActions(['saveUserName']),
     register() {
-      this.axios
-        .post("/user/register",{
-          username: "iwen",
-          password: "123456",
-          email: "adminiwen@163.com"
-        })
-        .then(() => {
-          this.$message.success("注册成功");
-        });
+      this.$router.push('/register');
     }
   }
 };

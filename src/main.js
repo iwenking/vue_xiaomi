@@ -1,3 +1,11 @@
+/*
+ * @Author: your name
+ * @Date: 2020-05-25 16:35:30
+ * @LastEditTime: 2020-05-26 09:45:37
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \vue_xiaomi-master\src\main.js
+ */ 
 import Vue from 'vue'
 import router from './router'
 import axios from 'axios'
@@ -5,7 +13,7 @@ import VueAxios from 'vue-axios'
 import VueLazyLoad from "vue-lazyload";
 import VueCookie from 'vue-cookie';
 import App from './App.vue'
-import {Carousel,CarouselItem,Message} from 'element-ui';
+import {Carousel,CarouselItem,Message ,Form,FormItem,Input,Button} from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 import store from './store'
 // import env from './env'
@@ -21,8 +29,10 @@ axios.defaults.baseURL = '/api';
 // axios.defaults.baseURL = env.baseURL;
 
 axios.defaults.timeout = 8000;
-
+Vue.prototype.$message = Message;
 //接口错误拦截
+let that = new Vue();
+
 axios.interceptors.response.use(function (response) {
   let res = response.data;
   let path = location.hash;
@@ -33,17 +43,19 @@ axios.interceptors.response.use(function (response) {
       window.location.href = '/#/login';
     }
     return Promise.reject();
-  } else {
-  
-    this.$message.warning(res.msg);
+  }else {
+    that.$message.error(res.msg);
     return Promise.reject();
   }
 })
 
-
+Vue.use(Form);
+Vue.use(FormItem);
 Vue.use(Carousel);
+Vue.use(Input);
+Vue.use(Button);
 Vue.use(CarouselItem);
-Vue.prototype.$message = Message;
+
 
 Vue.use(VueCookie);
 Vue.use(VueAxios, axios);
