@@ -42,31 +42,31 @@ export default new Router({
     {
         path: '/cart',
         name: 'cart',
-        component: import('@/Page/Cart.vue')
+        component:() => import('@/Page/Cart.vue')
     },
     {
         path: '/order',
         name: 'order',
-        component: import('@/Page/Order.vue'),
+        component:() => import('@/Page/Order.vue'),
         children: [{
             path: 'list',
             name: 'order-list',
-            component: import('@/Page/orderList.vue')
+            component:() => import('@/Page/orderList.vue')
         },
         {
             path: 'confirm',
             name: 'order-confirm',
-            component: import('@/Page/orderConfirm.vue')
+            component:() => import('@/Page/orderConfirm.vue')
         },
         {
             path: 'pay',
             name: 'order-pay',
-            component: import('@/Page/orderPay.vue')
+            component:() => import('@/Page/orderPay.vue')
         },
         {
             path: 'alipay',
             name: 'alipay',
-            component: import('@/Page/alipay.vue')
+            component:() => import('@/Page/alipay.vue')
         }
         ]
 
