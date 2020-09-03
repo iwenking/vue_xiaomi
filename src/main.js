@@ -1,11 +1,3 @@
-/*
- * @Author: your name
- * @Date: 2020-05-25 16:35:30
- * @LastEditTime: 2020-05-26 09:45:37
- * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
- * @FilePath: \vue_xiaomi-master\src\main.js
- */ 
 import Vue from 'vue'
 import router from './router'
 import axios from 'axios'
